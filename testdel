@@ -1,0 +1,17 @@
+open(ALLFILE, "find ../book -type f -not -path '*/¥.*' |");
+@allfile = <ALLFILE>;
+close(IN);
+open(RELEASEFILE,"< rls.lt");
+@rlsfile =<RELEASEFILE>;
+foreach $file (@allfile){
+        print "$file------------¥n";
+        foreach $rlsfile(@rlsfile){
+                if ($file ne $rlsfile){
+                        print ("del¥n");
+                }else{
+                        print ('!!!!!!!not del '.$rlsfile.'¥n');
+                }
+
+        }
+
+}
